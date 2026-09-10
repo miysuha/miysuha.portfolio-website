@@ -8,14 +8,15 @@
     <script src="hover.js" defer></script>
     <script>
 
+  // Disable right-click context menu
   document.addEventListener('contextmenu', event => event.preventDefault());
 
-
+  // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
   document.addEventListener('keydown', event => {
     if (
-      event.key === 'F12' || 
-      (event.ctrlKey && event.shiftKey && ['I', 'C', 'J'].includes(event.key)) || 
-      (event.ctrlKey && event.key === 'u')
+      event.keyCode === 123 || 
+      (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74)) || 
+      (event.ctrlKey && event.keyCode === 85)
     ) {
       event.preventDefault();
     }
@@ -156,12 +157,6 @@
             </div>
         </div>
     </div>
-    <script>
- 
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-    </script>
 
     <footer>
         <div class="footer-text">
